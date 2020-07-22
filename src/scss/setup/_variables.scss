@@ -1,3 +1,28 @@
+// fonts
+$font-titan: 'Titan One', cursive;
+$font-tomorrow: 'Tomorrow', sans-serif;
+
 // colors
 $color-black: #000000;
-$color-white: #FFFFFF;
+$color-black-opacity-02: rgba($color-black, 0.2);
+$color-port-gore: #232946;
+$color-spindle: #b8c1ec;
+$color-beauty-bush: #eebbc3;
+$color-beauty-bush-opacity-04: rgba($color-beauty-bush, 0.4);
+$color-black-white: #fffffe;
+$color-black-white-opacity-08: rgba($color-black-white, 0.8);
+$color-white: #ffffff;
+
+$color-background: $color-port-gore;
+$color-headline: $color-black-white;
+$color-paragraph: $color-spindle;
+$color-button: $color-beauty-bush;
+$color-button-text: $color-port-gore;
+
+// spacings
+$spacer-base: 5px;
+
+// transitions
+$duration-fast: 0.2s;
+$duration-regular: 0.4s;
+$duration-slow: 0.8s;

@@ -1,0 +1,17 @@
+.navigation {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: $spacer-base * 5;
+
+    a {
+        display: inline-block;
+        margin: 0 $spacer-base * 2;
+        color: $color-beauty-bush-opacity-04;
+        transition: color $duration-fast;
+
+        &:hover {
+            color: $color-beauty-bush;
+        }
+    }
+}
