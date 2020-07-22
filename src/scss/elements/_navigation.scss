@@ -2,6 +2,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    display: flex;
     padding: $spacer-base * 5;
 
     a {

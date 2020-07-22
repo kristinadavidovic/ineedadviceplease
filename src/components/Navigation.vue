@@ -3,6 +3,10 @@
         <router-link v-for="link in routerLinks" :to="link.url" :key="link.id">
             {{ link.name }}
         </router-link>
+        <div v-if="!$auth.loading">
+            <a v-if="!$auth.isAuthenticated" @click="login">Sign in</a>
+            <a v-if="$auth.isAuthenticated" @click="logout">Log out</a>
+        </div>
     </div>
 </template>
 
@@ -30,6 +34,16 @@
                     },
                 ],
             };
+        },
+        methods: {
+            login() {
+                this.$auth.loginWithRedirect();
+            },
+            logout() {
+                this.$auth.logout({
+                    returnTo: window.location.origin,
+                });
+            },
         },
     };
 </script>
