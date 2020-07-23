@@ -1,16 +1,18 @@
 <template>
     <div class="page page--home">
-        <text-card></text-card>
+        <advice></advice>
+        <button>Save Advice</button>
     </div>
 </template>
 
 <script>
-    import TextCard from '@/components/TextCard.vue';
+    // components
+    import Advice from '../components/Advice';
 
     export default {
         name: 'Home',
         components: {
-            TextCard,
+            Advice,
         },
     };
 </script>

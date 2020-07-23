@@ -24,12 +24,14 @@
             return {
                 routerLinks: [
                     {
-                        id: 1,
-                        name: 'Home',
+                        name: 'Random Advice',
                         url: '/',
                     },
                     {
-                        id: 2,
+                        name: 'Saved Advice',
+                        url: '/advice-saved',
+                    },
+                    {
                         name: 'About',
                         url: '/about',
                     },

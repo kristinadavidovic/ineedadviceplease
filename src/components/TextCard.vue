@@ -1,6 +1,11 @@
 <template>
-    <div class="text-card" v-if="advice">
-        {{ advice }}
+    <div>
+        <div class="text-card">
+            <div class="loader" v-if="loading"></div>
+            <div v-if="!loading && advice">
+                {{ advice }}
+            </div>
+        </div>
     </div>
 </template>
 
@@ -12,6 +17,7 @@
         data() {
             return {
                 advice: '',
+                loading: true,
             };
         },
         mounted() {
@@ -21,6 +27,7 @@
                     if (!response) return;
                     const { data } = response;
                     this.advice = data.slip.advice;
+                    this.loading = false;
                 })
                 .catch((error) => {
                     console.error(error);
