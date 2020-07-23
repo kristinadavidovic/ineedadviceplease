@@ -1,4 +1,13 @@
 .button {
     display: inline-flex;
-    
+    padding: $spacer-base * 2 $spacer-base * 6;
+    border: 2px solid $color-black;
+    color: $color-black;
+    background-color: $color-beauty-bush-opacity-08;
+    transition: $duration-fast background-color;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-beauty-bush;
+    }
 }

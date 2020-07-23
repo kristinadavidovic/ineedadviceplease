@@ -1,0 +1,12 @@
+.advice-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: $spacer-base * 5;
+}
+
+.advice-action {
+    & + & {
+        margin-left: $spacer-base * 2;
+    }
+}

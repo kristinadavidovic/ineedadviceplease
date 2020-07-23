@@ -1,10 +1,8 @@
 <template>
-    <div>
-        <div class="text-card">
-            <div class="loader" v-if="loading"></div>
-            <div v-if="!loading && advice">
-                {{ advice }}
-            </div>
+    <div class="text-card">
+        <div class="loader" v-if="loading"></div>
+        <div v-if="!loading && text">
+            {{ text }}
         </div>
     </div>
 </template>
@@ -14,24 +12,16 @@
 
     export default {
         name: 'TextCard',
-        data() {
-            return {
-                advice: '',
-                loading: true,
-            };
-        },
-        mounted() {
-            axios
-                .get('https://api.adviceslip.com/advice')
-                .then((response) => {
-                    if (!response) return;
-                    const { data } = response;
-                    this.advice = data.slip.advice;
-                    this.loading = false;
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
+        props: {
+            text: {
+                type: String,
+                required: false,
+            },
+            loading: {
+                type: Boolean,
+                required: false,
+                default: true,
+            },
         },
     };
 </script>

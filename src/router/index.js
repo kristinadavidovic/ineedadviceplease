@@ -3,10 +3,15 @@ import VueRouter from 'vue-router';
 
 // components
 import Home from '../views/Home';
+import AdviceSaved from '../views/AdviceSaved';
 import About from '../views/About';
 
 // utils
-import { ROUTE_ABOUT, ROUTE_HOME } from '../utils/constants';
+import {
+    ROUTE_ABOUT,
+    ROUTE_ADVICE_SAVED,
+    ROUTE_HOME,
+} from '../utils/constants';
 
 Vue.use(VueRouter);
 
@@ -20,6 +25,11 @@ const routes = [
         path: '/about',
         name: ROUTE_ABOUT,
         component: About,
+    },
+    {
+        path: '/advice-saved',
+        name: ROUTE_ADVICE_SAVED,
+        component: AdviceSaved,
     },
 ];
 

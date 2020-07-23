@@ -1,7 +1,6 @@
 <template>
     <div class="page page--home">
         <advice></advice>
-        <button>Save Advice</button>
     </div>
 </template>
 
