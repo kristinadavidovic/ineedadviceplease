@@ -10,6 +10,7 @@
         margin: 0 $spacer-base * 2;
         color: $color-beauty-bush-opacity-04;
         transition: color $duration-fast;
+        cursor: pointer;
 
         &:hover {
             color: $color-beauty-bush;
