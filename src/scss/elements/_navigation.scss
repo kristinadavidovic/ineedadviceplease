@@ -6,12 +6,27 @@
     a {
         display: inline-block;
         margin: 0 $spacer-base * 2;
-        color: $color-beauty-bush-opacity-04;
         transition: color $duration-fast;
         cursor: pointer;
+    }
 
-        &:hover {
-            color: $color-beauty-bush;
+    .app--advice & {
+        a {
+            color: $color-beauty-bush-opacity-04;
+
+            &:hover {
+                color: $color-beauty-bush;
+            }
+        }
+    }
+
+    .app--compliment & {
+        a {
+            color: $color-iceberg-opacity-04;
+
+            &:hover {
+                color: $color-iceberg;
+            }
         }
     }
 }
@@ -29,6 +44,7 @@
     bottom: 0;
 }
 
+.navigation--compliment,
 .navigation--advice {
     position: static;
     justify-content: center;

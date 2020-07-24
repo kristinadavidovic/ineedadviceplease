@@ -1,14 +1,14 @@
 <template>
     <div class="page page--home">
-        I need
         <div class="page-buttons">
+            I need
             <router-link to="/advice" class="button">
                 advice
             </router-link>
             or
-            <a class="button">
+            <router-link class="button" to="/compliment">
                 compliment
-            </a>
+            </router-link>
             , please.
         </div>
     </div>

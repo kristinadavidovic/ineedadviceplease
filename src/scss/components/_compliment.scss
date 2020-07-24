@@ -1,0 +1,12 @@
+.compliment-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: $spacer-base * 5;
+}
+
+.compliment-action {
+    & + & {
+        margin-left: $spacer-base * 2;
+    }
+}

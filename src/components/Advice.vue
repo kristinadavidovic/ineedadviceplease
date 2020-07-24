@@ -1,11 +1,11 @@
 <template>
     <div class="advice">
-        <navigation type="advice"></navigation>
+        <navigation type="advice" v-if="!loading"></navigation>
         <text-card :text="advice.advice" :loading="loading"></text-card>
         <div class="advice-actions">
             <a
                 @click="saveAdvice(advice)"
-                v-if="!loading"
+                v-if="!loading && $auth.isAuthenticated"
                 class="button advice-action"
             >
                 Save
@@ -50,6 +50,7 @@
         },
         methods: {
             saveAdvice(advice) {
+                // this.store.commit('addAdvice', advice);
                 console.log('🤯', advice);
             },
         },

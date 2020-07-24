@@ -20,6 +20,16 @@
                 {{ link.name }}
             </router-link>
         </template>
+        <!-- compliment -->
+        <template v-if="type == 'compliment'">
+            <router-link
+                v-for="link in complimentLinks"
+                :to="link.url"
+                :key="link.id"
+            >
+                {{ link.name }}
+            </router-link>
+        </template>
         <template v-if="type == 'account'">
             <div v-if="$auth.loading" class="loader"></div>
             <div v-if="!$auth.loading">
@@ -76,6 +86,23 @@
                         id: 1,
                         name: 'random',
                         url: '/advice',
+                    },
+                    {
+                        id: 2,
+                        name: 'saved',
+                        url: '/advice-saved',
+                    },
+                ],
+                complimentLinks: [
+                    {
+                        id: 1,
+                        name: 'random',
+                        url: '/compliment',
+                    },
+                    {
+                        id: 2,
+                        name: 'saved',
+                        url: '/compliment-saved',
                     },
                 ],
             };

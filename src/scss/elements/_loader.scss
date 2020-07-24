@@ -1,5 +1,4 @@
 .loader {
-    color: $color-beauty-bush-opacity-04;
     font-size: $spacer-base;
     margin: 1.5em $spacer-base * 5 0;
     width: 1em;
@@ -9,6 +8,14 @@
     text-indent: -9999em;
     animation: load4 1.3s infinite linear;
     transform: translateZ(0);
+
+    .app--advice & {
+        color: $color-beauty-bush-opacity-04;
+    }
+
+    .app--compliment & {
+        color: $color-iceberg-opacity-04;
+    }
 }
 
 @keyframes load4 {

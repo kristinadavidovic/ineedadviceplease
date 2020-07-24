@@ -1,11 +1,11 @@
 <template>
     <div class="compliment">
-        <navigation type="compliment"></navigation>
+        <navigation type="compliment" v-if="!loading"></navigation>
         <text-card :text="compliment" :loading="loading"></text-card>
         <div class="compliment-actions">
             <a
                 @click="saveCompliment(compliment)"
-                v-if="!loading"
+                v-if="!loading && $auth.isAuthenticated"
                 class="button compliment-action"
             >
                 Save

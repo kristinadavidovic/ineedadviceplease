@@ -7,7 +7,12 @@
 }
 
 .page-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
     a {
-        margin: 0 $spacer-base * 3;
+        margin: $spacer-base $spacer-base * 3;
     }
 }

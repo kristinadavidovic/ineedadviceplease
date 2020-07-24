@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 // components
 import Home from '../views/Home';
 import AdviceSaved from '../views/AdviceSaved';
+import ComplimentSaved from '../views/ComplimentSaved';
 import About from '../views/About';
 import PageAdvice from '../views/PageAdvice';
 import PageCompliment from '../views/PageCompliment';
@@ -13,8 +14,9 @@ import {
     ROUTE_ABOUT,
     ROUTE_ADVICE,
     ROUTE_ADVICE_SAVED,
-    ROUTE_HOME,
     ROUTE_COMPLIMENT,
+    ROUTE_COMPLIMENT_SAVED,
+    ROUTE_HOME,
 } from '../utils/constants';
 
 Vue.use(VueRouter);
@@ -44,6 +46,11 @@ const routes = [
         path: '/compliment',
         name: ROUTE_COMPLIMENT,
         component: PageCompliment,
+    },
+    {
+        path: '/compliment-saved',
+        name: ROUTE_COMPLIMENT_SAVED,
+        component: ComplimentSaved,
     },
 ];
 

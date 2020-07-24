@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="app" ref="app">
+    <div id="app" class="app app--advice" ref="app">
         <router-view />
         <navigation type="main"></navigation>
         <navigation type="account"></navigation>
@@ -16,15 +16,11 @@
         },
         methods: {
             handleStyles() {
-                if (
-                    this.$route.name == 'home' ||
-                    this.$route.name == 'advice'
-                ) {
-                    this.$refs.app.className = 'app--advice';
-                }
+                this.$route.name == 'advice' &&
+                    (this.$refs.app.className = 'app app--advice');
 
                 this.$route.name == 'compliment' &&
-                    (this.$refs.app.className = 'app--compliment');
+                    (this.$refs.app.className = 'app app--compliment');
             },
         },
         mounted() {
