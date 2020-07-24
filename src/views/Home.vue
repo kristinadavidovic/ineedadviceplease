@@ -1,17 +1,21 @@
 <template>
     <div class="page page--home">
-        <advice></advice>
+        I need
+        <div class="page-buttons">
+            <router-link to="/advice" class="button">
+                advice
+            </router-link>
+            or
+            <a class="button">
+                compliment
+            </a>
+            , please.
+        </div>
     </div>
 </template>
 
 <script>
-    // components
-    import Advice from '../components/Advice';
-
     export default {
         name: 'Home',
-        components: {
-            Advice,
-        },
     };
 </script>

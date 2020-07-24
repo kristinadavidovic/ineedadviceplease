@@ -1,5 +1,6 @@
 <template>
     <div class="advice">
+        <navigation type="advice"></navigation>
         <text-card :text="advice.advice" :loading="loading"></text-card>
         <div class="advice-actions">
             <a
@@ -17,7 +18,8 @@
     // 3rd
     import axios from 'axios';
     // components
-    import TextCard from '../components/TextCard';
+    import TextCard from './TextCard';
+    import Navigation from './Navigation';
     // utils
     import { ADVICE_API_BASE_URL } from '../utils/constants';
 
@@ -25,6 +27,7 @@
         name: 'Advice',
         components: {
             TextCard,
+            Navigation,
         },
         data() {
             return {

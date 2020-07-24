@@ -1,17 +1,44 @@
 <template>
     <div id="nav" class="navigation" :class="`navigation--${type}`">
-        <router-link v-for="link in routerLinks" :to="link.url" :key="link.id">
-            {{ link.name }}
-        </router-link>
-        <div v-if="$auth.loading" class="loader"></div>
-        <div v-if="!$auth.loading">
-            <a v-if="!$auth.isAuthenticated" @click="login">Sign in</a>
-            <a v-if="$auth.isAuthenticated" @click="logout">Log out</a>
-        </div>
+        <!-- main -->
+        <template v-if="type == 'main'">
+            <router-link
+                v-for="link in mainLinks"
+                :to="link.url"
+                :key="link.id"
+            >
+                {{ link.name }}
+            </router-link>
+        </template>
+        <!-- advice -->
+        <template v-if="type == 'advice'">
+            <router-link
+                v-for="link in adviceLinks"
+                :to="link.url"
+                :key="link.id"
+            >
+                {{ link.name }}
+            </router-link>
+        </template>
+        <template v-if="type == 'account'">
+            <div v-if="$auth.loading" class="loader"></div>
+            <div v-if="!$auth.loading">
+                <a v-if="!$auth.isAuthenticated" @click="login">Sign in</a>
+                <a v-if="$auth.isAuthenticated" @click="logout">Log out</a>
+            </div>
+        </template>
     </div>
 </template>
 
 <script>
+    // utils
+    import {
+        ROUTE_ABOUT,
+        ROUTE_ADVICE,
+        ROUTE_COMPLIMENT,
+        ROUTE_HOME,
+    } from '../utils/constants';
+
     export default {
         name: 'Navigation',
         props: {
@@ -22,18 +49,33 @@
         },
         data() {
             return {
-                routerLinks: [
+                mainLinks: [
                     {
-                        name: 'Random Advice',
+                        id: 1,
+                        name: ROUTE_HOME,
                         url: '/',
                     },
                     {
-                        name: 'Saved Advice',
-                        url: '/advice-saved',
+                        id: 2,
+                        name: ROUTE_ADVICE,
+                        url: '/advice',
                     },
                     {
-                        name: 'About',
+                        id: 3,
+                        name: ROUTE_COMPLIMENT,
+                        url: '/compliment',
+                    },
+                    {
+                        id: 4,
+                        name: ROUTE_ABOUT,
                         url: '/about',
+                    },
+                ],
+                adviceLinks: [
+                    {
+                        id: 1,
+                        name: 'random',
+                        url: '/advice',
                     },
                 ],
             };

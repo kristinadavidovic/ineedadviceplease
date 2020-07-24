@@ -1,7 +1,5 @@
 .navigation {
     position: absolute;
-    right: 0;
-    bottom: 0;
     display: flex;
     padding: $spacer-base * 5;
 
@@ -16,4 +14,22 @@
             color: $color-beauty-bush;
         }
     }
+}
+
+.navigation--main {
+    top: 0;
+    right: 0;
+    left: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.navigation--account {
+    right: 0;
+    bottom: 0;
+}
+
+.navigation--advice {
+    position: static;
+    justify-content: center;
 }
